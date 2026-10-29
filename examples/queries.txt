@@ -1,0 +1,8 @@
+# Rejected connection attempts (what the NSGs turned away)
+search "flowlogs" | where action = 'REJECT' | sort by time asc | head 8
+# Top talkers by bytes (largest flows first)
+search "flowlogs" | where action = 'ACCEPT' | sort by bytes | head 5
+# Denied SSH attempts from the scanner host
+search "flowlogs" | where dst_port = 22 and action = 'REJECT' | sort by time asc | head 8
+# Database flows that were accepted
+search "flowlogs" | where dst_port_name = 'oracle-db' and action = 'ACCEPT' | head 5
