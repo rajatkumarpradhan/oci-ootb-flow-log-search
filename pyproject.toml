@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oci-ootb-flow-log-search"
+version = "1.0.0"
+description = "Offline Logging Search subset over synthetic OCI VCN flow-log records (built-in OCI features, no tenancy needed)"
+requires-python = ">=3.10"
+readme = "README.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
